@@ -2,6 +2,7 @@
 from SRC.Structure import Analysis
 import pandas as pd
 import nltk
+from nltk.corpus import stopwords
 class Col_Structure:
     
     def Col_Structure_Primary(self, data):

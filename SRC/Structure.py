@@ -1,9 +1,19 @@
-import nltk
+# import nltk
 import re
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
+# from nltk.corpus import stopwords
+import nltk
+from nltk.corpus import stopwords
+from nltk.corpus import opinion_lexicon
+nltk.download('opinion_lexicon')
+nltk.download('stopwords')
 lem = WordNetLemmatizer()
 class Analysis:
+        
+    # def StopWords_data(self):
+    #     stop_words=set(stopwords.words('english'))
+    #     return stop_words 
        
     def StopWords_data(self,file_path='D:\\SRC\\StopWords'):
         stopword_auditor=open(f'{file_path}\\StopWords_Auditor.txt' ,'r',encoding='ISO-8859-1')
@@ -25,6 +35,15 @@ class Analysis:
         file_pos.seek(0)
         pos_split = file_pos.read().split()
         return pos_split,neg_split
+
+
+    # def MasterDictionar_data(self):
+    # # Negative Dictionary 
+    #     neg_split = opinion_lexicon.negative()
+    #     # Positive Dictionary 
+    #     pos_split = opinion_lexicon.positive()
+    #     return pos_split, neg_split
+    
     
     def text_corpus(self,x):
         stopword_auditor,StopWords_Currencies,StopWords_DatesandNumbers,StopWords_Generic,StopWords_GenericLong,StopWords_Geographic,StopWords_Names = self.StopWords_data()
@@ -35,6 +54,15 @@ class Analysis:
         token_word = [t for t in token if t not in (stopword_auditor,StopWords_Currencies,StopWords_DatesandNumbers,StopWords_Generic,StopWords_GenericLong,StopWords_Geographic,StopWords_Names) ]
         lemantizzed = [lem.lemmatize(w) for w in token_word]
         return lemantizzed
+
+    # def text_corpus(self, x):
+    #     stop_words = self.StopWords_data()
+    #     string_format = str(x).lower()
+    #     lower_words = re.sub('[^a-zA-Z]+', ' ', string_format).strip()
+    #     token = word_tokenize(lower_words)
+    #     token_word = [t for t in token if t not in stop_words]
+    #     lemmatized = [lem.lemmatize(w) for w in token_word]
+    #     return lemmatized
     
     def count_syllables(self,word):
         vowels = ("a","e","i","o","u","y")

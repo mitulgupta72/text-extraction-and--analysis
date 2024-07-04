@@ -1,0 +1,36 @@
+Data Extraction:
+
+    I utilized Python libraries such as BeautifulSoup and requests to extract the article text from the provided URLs.
+    The extracted text was cleaned to remove any irrelevant content, such as headers, footers, and advertisements, using techniques like HTML parsing and text filtering.
+
+
+Text Analysis:
+
+    I employed the NLTK library for various text processing tasks, including tokenization, lemmatization, and stopwords removal.
+    Sentiment analysis was performed by comparing the words in the articles against lists of positive and negative words from the provided master dictionary.
+    Readability metrics such as average sentence length, percentage of complex words, and fog index were calculated to assess the complexity of the text.
+    Other variables, such as word count, syllable per word, personal pronouns count, and average word length, were computed according to the specified requirements.
+
+
+Output Generation:
+
+    The computed variables were organized into a structured format matching the requirements specified in the "Output Data Structure.xlsx" file.
+    The output was saved to a CSV or Excel file for easy visualization and further analysis.
+
+
+Running the .py File:
+
+    Ensure that Python and all required libraries (NLTK, BeautifulSoup, pandas) are installed on your system.
+    Download the provided .py file along with the input files (input.xlsx, master dictionary, stopwords folder).
+    Place all files in the same directory.
+    Open a terminal or command prompt and navigate to the directory containing the files.
+    Run the Python script using the command: python script_name.py.
+    Wait for the script to finish executing. Once completed, the output file will be generated in the same directory.
+
+
+Dependencies:
+
+    Python 3.x
+    NLTK library
+    BeautifulSoup library
+    Pandas library

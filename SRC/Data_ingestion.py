@@ -14,7 +14,7 @@ import os
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 lem = WordNetLemmatizer()
-nltk.data.path.append("C:\\Users\\PCLP\\AppData\\Roaming\\nltk_data")
+nltk.data.path.append("C:\\Users\\mitul\\AppData\\Roaming\\nltk_data")
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
@@ -68,7 +68,7 @@ class data_ingestion:
             updated_list.append(new_dataframe)
 
             filename = urllib.parse.quote_plus(url) # this will convert the url as url name for the text file
-            file_path = 'D:\SRC\Text_files' #Path to store text files
+            file_path = 'D:\\SRC\\Text_files' #Path to store text files
             space = " "
                 
             with open(f"{file_path}\{filename}.txt", 'w+',encoding='utf-8') as file1: #Creating text files by there names and inserting article title and text
@@ -94,9 +94,9 @@ class data_ingestion:
             if alldiv is not None:
                 firstdata = alldiv.text
                 filename = urllib.parse.quote_plus(j)
-                file_path = 'D:\SRC\Text_files'
+                file_path = 'D:\\SRC\\Text_files'
                 space = " "                
-                with open(f"{file_path}\{filename}.txt", 'w+') as file1:
+                with open(f"{file_path}\\{filename}.txt", 'w+') as file1:
                     file1.writelines(article_title)
                     file1.writelines(space)
                     file1.writelines(firstdata)             
